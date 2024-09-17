@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstinsert.c                                     :+:      :+:    :+:   */
+/*   ft_lstreverse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 12:48:41 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/07 13:42:31 by fflamion         ###   ########.fr       */
+/*   Created: 2024/09/04 12:55:42 by fflamion          #+#    #+#             */
+/*   Updated: 2024/09/17 12:07:33 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstinsert(t_list **lst, t_list *new, size_t pos)
+void	ft_lstreverse(t_list **lst)
 {
+	t_list	*prev;
 	t_list	*current;
-	t_list	*previous;
-	size_t	i;
+	t_list	*next;
 
-	if (!lst || !new)
-		return;
-	if (pos == 0)
-	{
-		new->next = *lst;
-		*lst = new;
+	if (!lst || !*lst)
 		return ;
-	}
+	prev = NULL;
 	current = *lst;
-	previous = NULL;
-	i = 0;
-	while (current && i++ < pos)
+	while (current)
 	{
-		previous = current;
-		current = current->next;
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
 	}
-	if (i != pos)
-		return;
-	if (previous)
-		previous->next = new;
-	new->next = current;
+	*lst = prev;
 }
-
-

@@ -1,24 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_inplace.c                                :+:      :+:    :+:   */
+/*   ft_lstinsert.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 12:29:57 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/07 13:42:31 by fflamion         ###   ########.fr       */
+/*   Created: 2024/09/04 12:48:41 by fflamion          #+#    #+#             */
+/*   Updated: 2024/09/17 12:28:09 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstmap_inplace(t_list *lst, void *(*f)(void *))
+void	ft_lstinsert(t_list **lst, t_list *new, size_t pos)
 {
-	if (lst == NULL || f == NULL)
+	t_list	*current;
+	t_list	*previous;
+	size_t	i;
+
+	if (!lst || !new)
 		return;
-	while (lst)
+	if (pos == 0)
 	{
-		lst->content = (*f)(lst->content);
-		lst = lst->next;
+		new->next = *lst;
+		*lst = new;
+		return ;
 	}
+	current = *lst;
+	previous = NULL;
+	i = 0;
+	while (current && i++ < pos)
+	{
+		previous = current;
+		current = current->next;
+	}
+	if (i != pos)
+		return;
+	if (previous)
+		previous->next = new;
+	new->next = current;
 }

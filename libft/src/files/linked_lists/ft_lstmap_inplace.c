@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmerge.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap_inplace.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 12:56:39 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/07 13:42:31 by fflamion         ###   ########.fr       */
+/*   Created: 2024/09/05 12:29:57 by fflamion          #+#    #+#             */
+/*   Updated: 2024/09/17 12:09:41 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstmerge(t_list **lst1, t_list *lst2)
+void	ft_lstmap_inplace(t_list *lst, void *(*f)(void *))
 {
-    t_list *current;
-
-    if (!lst1 || !(*lst1))
-    {
-        *lst1 = lst2;
-        return;
-    }
-
-    current = *lst1;
-    while (current->next)
-        current = current->next;
-    
-    current->next = lst2;
+	if (lst == NULL || f == NULL)
+		return ;
+	while (lst)
+	{
+		lst->content = (*f)(lst->content);
+		lst = lst->next;
+	}
 }

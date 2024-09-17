@@ -6,10 +6,9 @@
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/09/08 19:00:08 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/17 12:10:21 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef FT_PRINTING_H
 # define FT_PRINTING_H

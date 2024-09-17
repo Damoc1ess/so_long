@@ -6,30 +6,31 @@
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:50:21 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/07 13:42:31 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/17 12:17:40 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void searching_char(char **array, char character, int *row, int *col)
+void	searching_char(char **array, char character, int *row, int *col)
 {
-    int i = 0;
-    char *str;
-	char *found;
+	int		i;
+	char	*str;
+	char	*found;
 
 	i = 0;
-    while (array[i] != NULL) {
-        str = array[i];
-		found = ft_strchr(str, character);
-        if (found != NULL)
+	while (array[i] != NULL)
+	{
+		str = array[i];
+		found = ft_strchr (str, character);
+		if (found != NULL)
 		{
-            *row = i;
-            *col = found - str;
-            return ;
-        }
-        i++;
-    }
-    *row = -1;
-    *col = -1;
+			*row = i;
+			*col = found - str;
+			return ;
+		}
+		i++;
+	}
+	*row = -1;
+	*col = -1;
 }
