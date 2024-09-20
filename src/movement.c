@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move.c                                             :+:      :+:    :+:   */
+/*   movement.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:57:10 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/16 19:27:08 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/20 13:43:27 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	handle_keypress(int keycode, t_game *ctx)
 	return (0);
 }
 
-int	check_if_on_collectibles(t_game *ctx, t_vec2 player)
+int	check_collectibles(t_game *ctx, t_vec2 player)
 {
 	int		i;
 
@@ -76,7 +76,7 @@ int	move_to_direction(t_game *ctx, int direction)
 		player_pos->x += 1;
 	else
 		return (0);
-	check_if_on_collectibles(ctx, *player_pos);
+	check_collectibles(ctx, *player_pos);
 	can_exit(ctx, *player_pos);
 	render_tiles(ctx);
 	ctx->movement_count += 1;

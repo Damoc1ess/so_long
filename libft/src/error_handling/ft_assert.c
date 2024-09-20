@@ -6,13 +6,13 @@
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 12:34:18 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/17 12:18:33 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/17 12:33:09 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_assert(int condition, const char *msg)
+void	ft_assert(int condition, const char *msg)
 {
 	if (!condition && msg)
 	{

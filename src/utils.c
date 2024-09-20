@@ -6,7 +6,7 @@
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:56:28 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/16 17:51:43 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/17 17:09:13 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	verif_ber(char *arg)
 
 	arg_size = ft_strlen(arg);
 	if (arg_size <= 4)
-		ft_putstr_red("Error\nPlease enter a valid map.");
+		ft_putstr_red("Error\nPlease enter a valid map.\n");
 	if (ft_strncmp(arg + arg_size - 4, ".ber", 4) != 0)
-		ft_putstr_red("Error\nWrong name extension.");
+		ft_putstr_red("Error\nWrong name extension.\n");
 	return ;
 }
 

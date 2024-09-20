@@ -166,7 +166,7 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 						!(tab = mlx_int_str_to_wordtab(line)) || !(width = atoi(tab[0])) ||
 						!(height = atoi(tab[1])) || !(nc = atoi(tab[2])) ||
 						!(cpp = atoi(tab[3])) )
-				RETURN;
+				return ;
 		free(tab);
 		tab = 0;
 
@@ -175,11 +175,11 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 		{
 				method = 1;
 				if (!(colors_direct = malloc((cpp==2?65536:256)*sizeof(int))))
-						RETURN;
+						return ;
 		}
 		else
 				if (!(colors = malloc(nc*sizeof(*colors))))
-						RETURN;
+						return ;
 
 		clip_data = 0;
 
@@ -188,12 +188,12 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 		{
 				if (!(line = f(info,&pos,info_size)) ||
 								!(tab = mlx_int_str_to_wordtab(line+cpp)) )
-						RETURN;
+						return ;
 				j = 0;
 				while (tab[j] && strcmp(tab[j++],"c"));
 
 				if (!tab[j])
-						RETURN;
+						return ;
 				rgb_col = mlx_int_get_text_rgb(tab[j], tab[j+1]);
 				/*
 				if ((rgb_col = mlx_int_get_text_rgb(tab[j], tab[j+1]))==-1)
@@ -202,7 +202,7 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 										!(clip_img = XCreateImage(xvar->display, xvar->visual,
 														1, XYPixmap, 0, clip_data,
 														width, height, 8, (width+7)/8)) )
-								RETURN;
+								return ;
 						memset(clip_data, 0xFF, 4*width*height);
 				}
 				*/
@@ -219,7 +219,7 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 		}
 
 		if (!(img = mlx_new_image(xvar,width,height)))
-				RETURN;
+				return ;
 		opp = img->bpp/8;
 
 
@@ -228,7 +228,7 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 		while (i--)
 		{
 				if (!(line = f(info,&pos,info_size)))
-						RETURN;
+						return ;
 				x = 0;
 				while (x<width)
 				{
@@ -265,7 +265,7 @@ void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())
 		{
 				if (!(clip_pix = XCreatePixmap(xvar->display, xvar->root,
 												width, height, 1)) )
-						RETURN;
+						return ;
 				img->gc = XCreateGC(xvar->display, clip_pix, 0, &xgcv);
 				XPutImage(xvar->display, clip_pix, img->gc, clip_img,
 								0, 0, 0, 0, width, height);

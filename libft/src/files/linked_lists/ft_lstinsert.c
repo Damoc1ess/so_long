@@ -6,7 +6,7 @@
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 12:48:41 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/17 12:28:09 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/17 12:29:18 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstinsert(t_list **lst, t_list *new, size_t pos)
 	size_t	i;
 
 	if (!lst || !new)
-		return;
+		return ;
 	if (pos == 0)
 	{
 		new->next = *lst;
@@ -35,7 +35,7 @@ void	ft_lstinsert(t_list **lst, t_list *new, size_t pos)
 		current = current->next;
 	}
 	if (i != pos)
-		return;
+		return ;
 	if (previous)
 		previous->next = new;
 	new->next = current;

@@ -36,11 +36,11 @@ int		mlx_mouse_show(t_xvar *xvar, t_win_list *win)
 int		mlx_mouse_get_pos(t_xvar *xvar, t_win_list *win, \
 			int *win_x_return, int *win_y_return)
 {
-	Window		root_return;
-	Window		child_return;
-	int			root_x_return;
-	int			root_y_return;
-	unsigned	mask_return;
+	Window		root_return ;
+	Window		child_return ;
+	int			root_x_return ;
+	int			root_y_return ;
+	unsigned	mask_return ;
 
 	return (XQueryPointer(xvar->display, win->window, \
 		&root_return, &child_return, &root_x_return, &root_y_return, \

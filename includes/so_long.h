@@ -6,7 +6,7 @@
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:03:50 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/17 10:37:24 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/17 17:35:15 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@
 
 /* Textures */
 # define WALL_TEXTURE "./textures/wall.xpm"
-# define GROUND_TEXTURE "./textures/ground.xpm"
-# define PLAYER_TEXTURE "./textures/guts.xpm"
-# define COLLECTIBLE_TEXTURE "./textures/collectibles.xpm"
-# define EXIT_TEXTURE "./textures/exit.xpm"
+# define GROUND_TEXTURE "./textures/Untitled.xpm"
+# define PLAYER_TEXTURE "./textures/zyzz.xpm"
+# define COLLECTIBLE_TEXTURE "./textures/seringue.xpm"
+# define EXIT_TEXTURE "./textures/rip.xpm"
 
 /* Booleans */
 # define TRUE 1

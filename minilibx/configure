@@ -88,7 +88,7 @@ verif_bers(){
 		clean)
 			clean
 			exit 0;;
-		"") return;;
+		"") return ;;
 		*)
 			log_error "unknown command \"$1\"\nRun \"./configure --help\" for usage."
 			exit 1;;

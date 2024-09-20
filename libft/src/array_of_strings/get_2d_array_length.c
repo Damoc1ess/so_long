@@ -6,7 +6,7 @@
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 11:42:05 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/17 12:16:54 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/17 12:33:48 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	get_2d_array_length(char **map)
 {
 	int	len;
-	
+
 	len = 0;
 	while (map[len] != NULL)
 		len++;

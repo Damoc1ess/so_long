@@ -6,7 +6,7 @@
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:57:56 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/16 19:27:20 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/17 17:09:34 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,26 +93,26 @@ void	check_map(char **arr)
 	if (check_invalid_char(arr) != 0)
 	{
 		clear_map(arr);
-		ft_putstr_red("Error\nInvalid character in map.");
+		ft_putstr_red("Error\nInvalid character in map.\n");
 	}
 	else if (check_rectangular(arr) != 0)
 	{
 		clear_map(arr);
-		ft_putstr_red("Error\nMap is not rectangular.");
+		ft_putstr_red("Error\nMap is not rectangular.\n");
 	}
 	else if (check_if_closed(arr) != 0)
 	{
 		clear_map(arr);
-		ft_putstr_red("Error\nMap is not closed by walls.");
+		ft_putstr_red("Error\nMap is not closed by walls.\n");
 	}
 	else if (check_max_char(arr) != 0)
 	{
 		clear_map(arr);
-		ft_putstr_red("Error\nMap contains more than 1 player or exit.");
+		ft_putstr_red("Error\nMap contains more than 1 player or exit.\n");
 	}
 	else if (check_available_path(arr) != 0)
 	{
 		clear_map(arr);
-		ft_putstr_red("Error\nNo path found to exit/collectibles.");
+		ft_putstr_red("Error\nNo path found to exit/collectibles.\n");
 	}
 }

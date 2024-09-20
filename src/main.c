@@ -6,7 +6,7 @@
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:57:25 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/17 10:34:33 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/17 17:45:20 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	main(int ac, char **av)
 	if (!ctx.mlx)
 		free_exit(&ctx);
 	ctx.window = mlx_new_window(ctx.mlx, ctx.map_data->width * 48,
-			ctx.map_data->height * 48, "Error\not_so_long");
+			ctx.map_data->height * 48, "Very long");
 	if (init_textures(&ctx) < 0)
 		free_exit(&ctx);
 	render_tiles(&ctx);
@@ -98,3 +98,4 @@ int	main(int ac, char **av)
 	mlx_loop(ctx.mlx);
 	return (0);
 }
+// max 39 length and 20 in profondeur lol  apres fiiiiniiniininin
