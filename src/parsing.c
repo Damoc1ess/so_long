@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:57:56 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/17 17:09:34 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/21 16:19:28 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	check_rectangular(char **arr)
 			return (1);
 		i++;
 	}
+	if (len > 40 || i > 21)
+		ft_putstr_red("Error\nMap to big\n");
 	return (0);
 }
 
@@ -108,7 +110,7 @@ void	check_map(char **arr)
 	else if (check_max_char(arr) != 0)
 	{
 		clear_map(arr);
-		ft_putstr_red("Error\nMap contains more than 1 player or exit.\n");
+		ft_putstr_red("Error\nMap invalid: requires 1 player, 1 exit, and at least 1 collectible.\n");
 	}
 	else if (check_available_path(arr) != 0)
 	{

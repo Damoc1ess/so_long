@@ -6,11 +6,11 @@
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:03:50 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/17 17:35:15 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:04:28 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
+#ifndef SO_L
 # define SO_LONG_H
 
 # include <stdio.h>
@@ -119,5 +119,6 @@ int				check_required_elements(char **map, char c);
 int				check_if_path(t_vec2 pos, char **filled_map);
 int				next_strchr(char *str, int c);
 int				print_mov_count(t_game *ctx);
+void			verif_flood(char **map);
 
 #endif

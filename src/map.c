@@ -6,7 +6,7 @@
 /*   By: fflamion <fflamion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:57:17 by fflamion          #+#    #+#             */
-/*   Updated: 2024/09/20 14:08:36 by fflamion         ###   ########.fr       */
+/*   Updated: 2024/09/20 14:28:43 by fflamion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	**get_map(char *path)
 
 	height = get_height(path);
 	if (height == -1)
-		ft_putstr_red("Error\nMap doesn't have enough characters\n");
+		ft_putstr_red("Error\nMap is empty\n");
 	else if (height == -2)
 		ft_putstr_red("Error\nMap contain a newline character in the last line\n");
 	fd = open(path, O_RDONLY);
